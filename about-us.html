@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Nainawa Ziyarat Tours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a',
+                            500: '#4a4a4a',
+                        },
+                        primary: {
+                            dark: '#01411C',
+                            light: '#1a5c2e'
+                        },
+                        gold: {
+                            500: '#D4AF37',
+                            600: '#c19a2b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        arabic: ['Noto Naskh Arabic', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        .arabic {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        .holy-site-image {
+            filter: brightness(0.8) contrast(1.1);
+        }
+        .gradient-border {
+            border: 1px solid transparent;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image: linear-gradient(#0a0a0a, #0a0a0a), linear-gradient(to right, #D4AF37, #01411C);
+        }
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: 100%;
+            width: 2px;
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200">
+    <!-- Header -->
+    <header class="bg-primary-dark text-white">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-mosque text-xl text-gold-500"></i>
+                <span class="text-xl font-semibold">Nainawa Ziyarat Tours</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="tel:+9647801234567" class="hover:text-gold-500 transition-colors"><i class="fas fa-phone-alt mr-2"></i> +91-8840936715</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-primary-dark text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="Home_page.html" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">Home</a>
+                    <a href="book_now.html" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">Packages</a>
+                    <a href="about-us.html" class="hover:text-gold-500 font-medium py-2 border-b-2 border-gold-500 transition-all">About Us</a>
+                    <a href="Home_page.html#contact" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">Contact</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <a href="book_now.html" class="bg-gold-500 hover:bg-gold-600 text-primary-dark px-6 py-2 rounded-full font-medium transition-colors shadow-lg">Book Now</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-2">
+                <a href="Home_page.html" class="block py-2 px-4 hover:bg-primary-light">Home</a>
+                <a href="book_now.html" class="block py-2 px-4 hover:bg-primary-light">Packages</a>
+                <a href="about-us.html" class="block py-2 px-4 bg-primary-light">About Us</a>
+                <a href="Home_page.html#contact" class="block py-2 px-4 hover:bg-primary-light">Contact</a>
+                <a href="book_now.html" class="block bg-gold-500 text-primary-dark px-4 py-2 mx-4 my-2 rounded-full text-center">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1586348943529-beaae6c28db9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80');">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">About Nainawa Ziyarat Tours</h1>
+            <p class="text-xl max-w-2xl mx-auto">Guiding pilgrims on sacred journeys since 2008</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-16 bg-dark-900">
+        <div class="container mx-auto px-4">
+            <!-- Our Story -->
+            <div class="max-w-4xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold mb-6 text-gold-500">Our Story</h2>
+                <div class="w-24 h-1 bg-gold-500 mb-6"></div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-gray-400 mb-4">Nainawa Ziyarat Tours was founded in 2011 by a group of religious scholars and travel experts who recognized the need for organized, spiritually enriching pilgrimage experiences to the holy sites of Iraq and Iran.</p>
+                        <p class="text-gray-400 mb-4">What began as a small operation arranging trips for local communities has grown into an internationally recognized pilgrimage travel agency, serving thousands of pilgrims from all over India.</p>
+                        <p class="text-gray-400">Our name "Nainawa" pays homage to the historical region surrounding Karbala, connecting our mission to the sacred geography we serve.</p>
+                    </div>
+                    <div class="bg-dark-800 p-6 rounded-lg border border-gold-500/30">
+                        <img src="https://scontent.flko10-1.fna.fbcdn.net/v/t39.30808-6/462534182_8414668555276923_6037110960458376936_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=uylgUDOMUD0Q7kNvwHCMaRF&_nc_oc=Adko_Kbcr0dwVGZDourhRIn6CjkAC-6JkhDynyTXnfEsKezaC6hxZT9twhKiwqb9iaF_Em5cQMTWUBlesdxERRJt&_nc_zt=23&_nc_ht=scontent.flko10-1.fna&_nc_gid=YymkvqnWMzI3ClWK2KHuIw&oh=00_AfJzcpxDFJDTl8n30LapSc7Ut6AjLGkWw73O2-0mxgVWcA&oe=68334AD7" alt="Our Beginnings" class="w-full rounded-lg holy-site-image">
+                        <p class="text-center text-sm text-gray-500 mt-2">Our first group of pilgrims in Damascus, Syria 2011</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Mission -->
+            <div class="max-w-4xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold mb-6 text-gold-500">Our Mission</h2>
+                <div class="w-24 h-1 bg-gold-500 mb-6"></div>
+                
+                <div class="bg-dark-800 p-8 rounded-lg border border-gold-500/30">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-hands-praying text-5xl text-gold-500 mb-4"></i>
+                        <p class="text-xl italic text-gray-300 max-w-3xl mx-auto">
+                            "To facilitate spiritually transformative journeys to the holy shrines, providing pilgrims with authentic experiences rooted in Islamic tradition and scholarly guidance."
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mt-8">
+                        <div class="text-center p-4">
+                            <div class="text-4xl text-gold-500 mb-3">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Sacred Access</h3>
+                            <p class="text-gray-400">Make ziyarat accessible to all Muslims regardless of nationality or background</p>
+                        </div>
+                        <div class="text-center p-4">
+                            <div class="text-4xl text-gold-500 mb-3">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Education</h3>
+                            <p class="text-gray-400">Provide authentic religious guidance throughout the pilgrimage journey</p>
+                        </div>
+                        <div class="text-center p-4">
+                            <div class="text-4xl text-gold-500 mb-3">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Safety</h3>
+                            <p class="text-gray-400">Ensure physical and spiritual security for all our pilgrims</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our History Timeline -->
+            <div class="max-w-4xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold mb-6 text-gold-500">Our Journey</h2>
+                <div class="w-24 h-1 bg-gold-500 mb-6"></div>
+                
+                <div class="space-y-8 relative">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item pl-8 relative">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-gold-500 border-4 border-dark-800"></div>
+                        <div class="bg-dark-800 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                                <h3 class="text-xl font-bold">Foundation</h3>
+                                <span class="text-gold-500 font-medium">2008</span>
+                            </div>
+                            <p class="text-gray-400">Established in Lucknow by Shabahat abbas Rizvi and a group of local scholars to serve pilgrims visiting Imam Ali's (a.s.) shrine</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item pl-8 relative">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-gold-500 border-4 border-dark-800"></div>
+                        <div class="bg-dark-800 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                                <h3 class="text-xl font-bold">First International Group</h3>
+                                <span class="text-gold-500 font-medium">2011</span>
+                            </div>
+                            <p class="text-gray-400">Organized our first international pilgrimage group from Lucknow, India</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item pl-8 relative">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-gold-500 border-4 border-dark-800"></div>
+                        <div class="bg-dark-800 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                                <h3 class="text-xl font-bold">Arbaeen Expansion</h3>
+                                <span class="text-gold-500 font-medium">2012</span>
+                            </div>
+                            <p class="text-gray-400">Launched specialized Arbaeen walk packages, becoming one of the first agencies to organize the Najaf-Karbala walk for international pilgrims</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item pl-8 relative">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-gold-500 border-4 border-dark-800"></div>
+                        <div class="bg-dark-800 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                                <h3 class="text-xl font-bold">Iran Operations</h3>
+                                <span class="text-gold-500 font-medium">2014</span>
+                            </div>
+                            <p class="text-gray-400">Expanded services to include nainawa ziyarat tours in Iran, establishing partnerships with shrines in Mashhad and Qom</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item pl-8 relative">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-gold-500 border-4 border-dark-800"></div>
+                        <div class="bg-dark-800 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                                <h3 class="text-xl font-bold">Recognition</h3>
+                                <span class="text-gold-500 font-medium">2019</span>
+                            </div>
+                            <p class="text-gray-400">Received official endorsement from the Office of Ayatollah Sistani for our authentic religious programming</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 6 -->
+                    <div class="timeline-item pl-8 relative">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-gold-500 border-4 border-dark-800"></div>
+                        <div class="bg-dark-800 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                                <h3 class="text-xl font-bold">Present Day</h3>
+                                <span class="text-gold-500 font-medium">2025</span>
+                            </div>
+                            <p class="text-gray-400">Serving over 1,000+ pilgrims annually with a team of 10+ dedicated staff members across Iraq and Iran</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Team -->
+            <div class="max-w-4xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold mb-6 text-gold-500">Our Team</h2>
+                <div class="w-24 h-1 bg-gold-500 mb-6"></div>
+                
+                <p class="text-gray-400 mb-8">Our team combines religious scholarship with travel expertise to create meaningful pilgrimage experiences:</p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="bg-dark-800 p-6 rounded-lg border border-dark-700 text-center">
+                      <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-dark-700 overflow-hidden border-2 border-gold-500">
+                          <img src="https://scontent.flko9-2.fna.fbcdn.net/v/t39.30808-6/489453267_9236517883124717_2679549016249996826_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=89be11&_nc_ohc=G1r8N_w9RBwQ7kNvwEalNzy&_nc_oc=Adl70uJPTwACYiNx9DmUwgp0mBQLguNccVboZeZ1fNkUPEqfdynJvN2NJN00VRYkzMjbMcElOwdPoXSKpjLhBDfp&_nc_zt=23&_nc_ht=scontent.flko9-2.fna&_nc_gid=gg9Y-1lCw5bWzNUA5DjqMQ&oh=00_AfJ3gj8P2Oqq9iv0dKx59PJY6G_LpiHf4C2ndthU6hcDtQ&oe=683346C6" 
+                               alt="Shabahat Abbas Rizvi" 
+                               class="w-full h-full object-cover object-center" />
+                      </div>
+                      <h3 class="text-xl font-bold mb-1">Shabahat Abbas Rizvi</h3>
+                      <p class="text-gold-500 mb-3">Founder</p>
+                      <p class="text-gray-400 text-sm">Provides support to pilgrims before, during, and after their journey having 15+ years of experience guiding pilgrims</p>
+                  </div>
+                  
+                    
+                    <!-- Team Member 2 -->
+                    <div class="bg-dark-800 p-6 rounded-lg border border-dark-700 text-center">
+                      <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-dark-700 overflow-hidden border-2 border-gold-500">
+                          <img src="https://scontent.flko9-2.fna.fbcdn.net/v/t39.30808-6/465713945_9535267569825713_7495054868387332568_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=SzK0cNolwbEQ7kNvwHYNztT&_nc_oc=Adm6kyzOaARwwpbPLj11-v9Phqc1AjNV-4-fl9bLDcDvPm4GHULTSAf8gGPDBf4iHoDhqXdVGf15MVglNg4tMiiy&_nc_zt=23&_nc_ht=scontent.flko9-2.fna&_nc_gid=K92ENHaebcdc3g6JOHoVzw&oh=00_AfJGHZI6n4EZhGaZUo3KDFc2dM8HEaaWDCDKxQlqlXR1ug&oe=68335FC9" 
+                               alt="Mohammad Askari" 
+                               class="w-full h-full object-cover object-center" />
+                      </div>
+                        <h3 class="text-xl font-bold mb-1">Mohamad Askari</h3>
+                        <p class="text-gold-500 mb-3">Operations Manager</p>
+                        <p class="text-gray-400 text-sm">10 years experience in pilgrimage logistics and travel coordination</p>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="bg-dark-800 p-6 rounded-lg border border-dark-700 text-center">
+                      <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-dark-700 overflow-hidden border-2 border-gold-500">
+                          <img src="https://scontent.flko9-2.fna.fbcdn.net/v/t1.6435-9/71722424_2588493294547763_297895087654830080_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=4Ywycwi-2TIQ7kNvwHjivZF&_nc_oc=AdmNk7rCflelx74RRPxnvDw8x0vAqDDGWDblsrGxCqWtrUvHncioOm95K94ko6KArK-ma_DePZW1dDD9vCACwmxL&_nc_zt=23&_nc_ht=scontent.flko9-2.fna&_nc_gid=bQhHHhs1on5ASOyaP1ObUw&oh=00_AfJa66DojM4RA0slUC833ofQYsa8lIrMY5vb59YUGUHsow&oe=6854D822" 
+                               alt="Zeeshan Ali Azmi" 
+                               class="w-full h-full object-cover object-center" />
+                      </div>
+                        <h3 class="text-xl font-bold mb-1">Zeeshan Ali Azmi</h3>
+                        <p class="text-gold-500 mb-3">Programs Coordinator and Religious </p>
+                        <p class="text-gray-400 text-sm">Specializes in giving speaches about our imam's and their tragedy</p>
+                    </div>
+                    
+                    <!-- Team Member 4 -->
+                    <div class="bg-dark-800 p-6 rounded-lg border border-dark-700 text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-dark-700 overflow-hidden border-2 border-gold-500">
+                            <i class="fas fa-user-md text-5xl text-gold-500 w-full h-full flex items-center justify-center"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">Dr. Dayam Raza</h3>
+                        <p class="text-gold-500 mb-3">Medical Director</p>
+                        <p class="text-gray-400 text-sm">Ensures health and safety protocols for all pilgrimage groups</p>
+                    </div>
+                    
+                    <!-- Team Member 5 -->
+                    <div class="bg-dark-800 p-6 rounded-lg border border-dark-700 text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-dark-700 overflow-hidden border-2 border-gold-500">
+                            <i class="fas fa-user-tie text-5xl text-gold-500 w-full h-full flex items-center justify-center"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">Maulana Sadiq</h3>
+                        <p class="text-gold-500 mb-3">Iran Operations</p>
+                        <p class="text-gray-400 text-sm">Manages our ziyarat programs in Mashhad and Qom</p>
+                    </div>
+                    
+                    <!-- Team Member 6 -->
+                    <div class="bg-dark-800 p-6 rounded-lg border border-dark-700 text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-dark-700 overflow-hidden border-2 border-gold-500">
+                            <i class="fas fa-headset text-5xl text-gold-500 w-full h-full flex items-center justify-center"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">Syed</h3>
+                        <p class="text-gold-500 mb-3">Customer Relations</p>
+                      </div>
+                      <p class="text-gray-400 text-sm">Provides support to pilgrims before, during, and after their journey</p>
+                </div>
+            </div>
+
+            <!-- Our Values -->
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-gold-500">Our Values</h2>
+                <div class="w-24 h-1 bg-gold-500 mb-6"></div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="gradient-border p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl text-gold-500 mr-4">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Service to the Ahlulbayt (a.s.)</h3>
+                        </div>
+                        <p class="text-gray-400">We consider facilitating ziyarat as a form of service to the Ahlulbayt (a.s.), not just a business. Our team is trained to treat every pilgrim with the respect due to visitors of the holy shrines.</p>
+                    </div>
+                    
+                    <div class="gradient-border p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl text-gold-500 mr-4">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Authentic Scholarship</h3>
+                        </div>
+                        <p class="text-gray-400">All our religious guides are graduates of recognized hawzas and our programs are reviewed by senior scholars to ensure authentic representation of Islamic teachings.</p>
+                    </div>
+                    
+                    <div class="gradient-border p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl text-gold-500 mr-4">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Safety First</h3>
+                        </div>
+                        <p class="text-gray-400">We maintain rigorous safety standards, with 24/7 security coordination, emergency medical support, and thorough risk assessments for all our programs.</p>
+                    </div>
+                    
+                    <div class="gradient-border p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-3xl text-gold-500 mr-4">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Community Focus</h3>
+                        </div>
+                        <p class="text-gray-400">A portion of our profits supports local communities near the holy shrines, including orphanages, schools, and public facilities used by pilgrims.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-dark-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">What Pilgrims Say</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-lg text-gray-400">Hear from those who have traveled with us</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-dark-700 p-6 rounded-lg border border-dark-600">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-dark-600 overflow-hidden mr-4">
+                            <i class="fas fa-user text-3xl text-gold-500 w-full h-full flex items-center justify-center"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Brother Ahmed</h4>
+                            <p class="text-sm text-gray-500">From Canada | Arbaeen 2022</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-400 mb-4">
+                        <i class="fas fa-quote-left text-dark-500 mr-2"></i>
+                        The spiritual guidance provided by Sheikh Hassan transformed my Arbaeen experience from a physical journey to a profound spiritual awakening.
+                    </div>
+                    <div class="flex">
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-700 p-6 rounded-lg border border-dark-600">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-dark-600 overflow-hidden mr-4">
+                            <i class="fas fa-user text-3xl text-gold-500 w-full h-full flex items-center justify-center"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sister Zahra</h4>
+                            <p class="text-sm text-gray-500">From UK | Iran Ziyarat 2023</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-400 mb-4">
+                        <i class="fas fa-quote-left text-dark-500 mr-2"></i>
+                        As a solo female traveler, I felt completely safe and supported throughout my journey. Sister Fatima's knowledge of women's rituals at the shrines was invaluable.
+                    </div>
+                    <div class="flex">
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-700 p-6 rounded-lg border border-dark-600">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-dark-600 overflow-hidden mr-4">
+                            <i class="fas fa-user text-3xl text-gold-500 w-full h-full flex items-center justify-center"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Haji Mohammed</h4>
+                            <p class="text-sm text-gray-500">From USA | Senior Pilgrim</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-400 mb-4">
+                        <i class="fas fa-quote-left text-dark-500 mr-2"></i>
+                        At 72 years old, I worried about making the journey, but the team accommodated all my needs with such respect and patience. This was my most comfortable ziyarat experience.
+                    </div>
+                    <div class="flex">
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-primary-dark to-primary-light">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready for Your Spiritual Journey?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join thousands of pilgrims in this transformative experience</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="book_now.html" class="inline-block bg-gold-500 hover:bg-gold-600 text-primary-dark px-8 py-3 rounded-full font-medium text-lg transition-colors shadow-lg">Book Now</a>
+                <a href="Home_page.html#contact" class="inline-block border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full font-medium text-lg transition-colors">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-gray-400 py-12 border-t border-dark-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-mosque text-2xl text-gold-500"></i>
+                        <span class="text-xl font-semibold text-white">Nainawa Ziyarat Tours</span>
+                    </div>
+                    <p class="mb-4">Facilitating sacred journeys to the holy shrines since 2008.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="Home_page.html" class="hover:text-gold-500 transition-colors">Home</a></li>
+                        <li><a href="book_now.html" class="hover:text-gold-500 transition-colors">Arbaeen Walk</a></li>
+                        <li><a href="book_now.html" class="hover:text-gold-500 transition-colors">Book Now</a></li>
+                        <li><a href="about-us.html" class="hover:text-gold-500 transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gold-500 mt-1 mr-3"></i>
+                            <span>Al-Rasheed Street, Najaf, Iraq</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gold-500 mr-3"></i>
+                            <span>++91-8840936715</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gold-500 mr-3"></i>
+                            <span>info@ziyarattours.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-primary-dark transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-primary-dark transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-primary-dark transition-colors">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-dark-800 mt-12 pt-8 text-center">
+                <p>© 2023 Nainawa Ziyarat Tours. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/+918840936715" class="w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center text-white text-2xl shadow-lg transform hover:scale-110 transition-all">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

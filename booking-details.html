@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Booking | Nainawa Ziyarat Tours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a',
+                            500: '#4a4a4a',
+                        },
+                        primary: {
+                            dark: '#01411C',
+                            light: '#1a5c2e'
+                        },
+                        gold: {
+                            500: '#D4AF37',
+                            600: '#c19a2b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        arabic: ['Noto Naskh Arabic', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        .arabic {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        .gradient-border {
+            border: 1px solid transparent;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image: linear-gradient(#0a0a0a, #0a0a0a), linear-gradient(to right, #D4AF37, #01411C);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200">
+    <!-- Header -->
+    <header class="bg-primary-dark text-white">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-mosque text-xl text-gold-500"></i>
+                <span class="text-xl font-semibold">Nainawa Ziyarat Tours</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="tel:+9647801234567" class="hover:text-gold-500 transition-colors"><i class="fas fa-phone-alt mr-2"></i> ++91-8840936715</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-primary-dark text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="Home_page.html" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">Home</a>
+                    <a href="book_now.html" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">Packages</a>
+                    <a href="about-us.html" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">About Us</a>
+                    <a href="Home_page.html#contact" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">Contact</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <a href="book_now.html" class="bg-gold-500 hover:bg-gold-600 text-primary-dark px-6 py-2 rounded-full font-medium transition-colors shadow-lg">Book Now</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-2">
+                <a href="index.html" class="block py-2 px-4 hover:bg-primary-light">Home</a>
+                <a href="book_now.html" class="block py-2 px-4 hover:bg-primary-light">Packages</a>
+                <a href="about-us.html" class="block py-2 px-4 hover:bg-primary-light">About Us</a>
+                <a href="Home_page.html#contact" class="block py-2 px-4 hover:bg-primary-light">Contact</a>
+                <a href="book_now.html" class="block bg-gold-500 text-primary-dark px-4 py-2 mx-4 my-2 rounded-full text-center">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Form -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4">Complete Your Booking</h1>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mb-6"></div>
+                <p id="selected-package-text" class="text-lg text-gold-500 font-medium"></p>
+            </div>
+            
+            <form id="booking-form" class="bg-dark-800 p-8 rounded-lg shadow-lg">
+                <!-- Personal Information -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-6 text-gold-500 border-b border-gold-500/30 pb-2">Personal Information</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="first-name" class="block mb-2 font-medium">First Name *</label>
+                            <input type="text" id="first-name" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="middle-name" class="block mb-2 font-medium">Middle Name</label>
+                            <input type="text" id="middle-name" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label for="last-name" class="block mb-2 font-medium">Last Name *</label>
+                            <input type="text" id="last-name" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="gender" class="block mb-2 font-medium">Gender *</label>
+                            <select id="gender" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="date-of-birth" class="block mb-2 font-medium">Date of Birth *</label>
+                            <input type="date" id="date-of-birth" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="nationality" class="block mb-2 font-medium">Nationality *</label>
+                            <input type="text" id="nationality" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-6 text-gold-500 border-b border-gold-500/30 pb-2">Contact Information</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Email Address *</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 font-medium">Phone Number *</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="country" class="block mb-2 font-medium">Country of Residence *</label>
+                            <select id="country" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                                <option value="">Select Country</option>
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="CA">Canada</option>
+                                <option value="AU">Australia</option>
+                                <option value="PK">Pakistan</option>
+                                <option value="IN">India</option>
+                                <option value="AE">UAE</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="city" class="block mb-2 font-medium">City *</label>
+                            <input type="text" id="city" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Travel Information -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-6 text-gold-500 border-b border-gold-500/30 pb-2">Travel Information</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="passport-number" class="block mb-2 font-medium">Passport Number *</label>
+                            <input type="text" id="passport-number" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="passport-expiry" class="block mb-2 font-medium">Passport Expiry Date *</label>
+                            <input type="date" id="passport-expiry" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="travel-date" class="block mb-2 font-medium">Preferred Travel Date *</label>
+                            <input type="date" id="travel-date" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="travelers" class="block mb-2 font-medium">Number of Travelers *</label>
+                            <input type="number" id="travelers" min="1" max="10" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="special-requests" class="block mb-2 font-medium">Special Requests</label>
+                        <textarea id="special-requests" rows="3" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Emergency Contact -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-6 text-gold-500 border-b border-gold-500/30 pb-2">Emergency Contact</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="emergency-name" class="block mb-2 font-medium">Full Name *</label>
+                            <input type="text" id="emergency-name" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="emergency-relation" class="block mb-2 font-medium">Relationship *</label>
+                            <input type="text" id="emergency-relation" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="emergency-phone" class="block mb-2 font-medium">Phone Number *</label>
+                            <input type="tel" id="emergency-phone" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="emergency-email" class="block mb-2 font-medium">Email Address</label>
+                            <input type="email" id="emergency-email" class="w-full px-4 py-3 rounded bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none transition-colors">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Terms and Payment -->
+                <div class="mb-10">
+                    <h2 class="text-2xl font-bold mb-6 text-gold-500 border-b border-gold-500/30 pb-2">Terms & Payment</h2>
+                    
+                    <div class="mb-6">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="terms" type="checkbox" class="w-4 h-4 rounded bg-dark-700 border-dark-600 focus:ring-gold-500 text-gold-500" required>
+                            </div>
+                            <label for="terms" class="ml-3 text-sm text-gray-400">
+                                I agree to the <a href="#" class="text-gold-500 hover:underline">terms and conditions</a> and understand that a $200 deposit per person is required to secure the booking.
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="privacy" type="checkbox" class="w-4 h-4 rounded bg-dark-700 border-dark-600 focus:ring-gold-500 text-gold-500" required>
+                            </div>
+                            <label for="privacy" class="ml-3 text-sm text-gray-400">
+                                I consent to the processing of my personal data in accordance with the <a href="#" class="text-gold-500 hover:underline">privacy policy</a>.
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block mb-3 font-medium">Payment Method *</label>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div>
+                                <input type="radio" id="credit-card" name="payment" value="credit-card" class="hidden peer" required>
+                                <label for="credit-card" class="flex items-center justify-center p-4 bg-dark-700 border border-dark-600 rounded-lg cursor-pointer peer-checked:border-gold-500 peer-checked:bg-gold-500/10">
+                                    <i class="far fa-credit-card text-xl mr-2"></i> Credit Card
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="bank-transfer" name="payment" value="bank-transfer" class="hidden peer">
+                                <label for="bank-transfer" class="flex items-center justify-center p-4 bg-dark-700 border border-dark-600 rounded-lg cursor-pointer peer-checked:border-gold-500 peer-checked:bg-gold-500/10">
+                                    <i class="fas fa-university text-xl mr-2"></i> Bank Transfer
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" id="paypal" name="payment" value="paypal" class="hidden peer">
+                                <label for="paypal" class="flex items-center justify-center p-4 bg-dark-700 border border-dark-600 rounded-lg cursor-pointer peer-checked:border-gold-500 peer-checked:bg-gold-500/10">
+                                    <i class="fab fa-paypal text-xl mr-2"></i> UPI
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="bg-gold-500 hover:bg-gold-600 text-primary-dark px-8 py-3 rounded-full font-medium text-lg transition-colors shadow-lg w-full md:w-auto">
+                        Complete Booking
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-gray-400 py-12 border-t border-dark-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-mosque text-2xl text-gold-500"></i>
+                        <span class="text-xl font-semibold text-white">Nainawa Ziyarat Tours</span>
+                    </div>
+                    <p class="mb-4">Facilitating sacred journeys to the holy shrines since 2008.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-gold-500 transition-colors">Home</a></li>
+                        <li><a href="arbaeen-walk.html" class="hover:text-gold-500 transition-colors">Arbaeen Walk</a></li>
+                        <li><a href="book-now.html" class="hover:text-gold-500 transition-colors">Book Now</a></li>
+                        <li><a href="index.html#about" class="hover:text-gold-500 transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gold-500 mt-1 mr-3"></i>
+                            <span>Al-Rasheed Street, Najaf, Iraq</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gold-500 mr-3"></i>
+                            <span>++91-8840936715</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gold-500 mr-3"></i>
+                            <span>info@ziyarattours.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-primary-dark transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-primary-dark transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center text-gray-400 hover:bg-gold-500 hover:text-primary-dark transition-colors">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-dark-800 mt-12 pt-8 text-center">
+                <p>© 2023 Nainawa Ziyarat Tours. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="#" class="w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center text-white text-2xl shadow-lg transform hover:scale-110 transition-all">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Display selected package
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const packageParam = urlParams.get('package');
+            const packageText = document.getElementById('selected-package-text');
+            
+            // Get package from URL or localStorage
+            let selectedPackage = packageParam || localStorage.getItem('selectedPackage');
+            
+            // Set package text based on selection
+            if (selectedPackage) {
+                let packageName = '';
+                switch(selectedPackage) {
+                    case 'arbaeen-walk':
+                        packageName = 'Arbaeen Walk Package (10 Days)';
+                        break;
+                    case 'iraq-shrines':
+                        packageName = 'Iraq Holy Shrines Package (7 Days)';
+                        break;
+                    case 'iran-ziyarat':
+                        packageName = 'Iran Ziyarat Package (10 Days)';
+                        break;
+                    default:
+                        packageName = 'Selected Pilgrimage Package';
+                }
+                packageText.textContent = packageName;
+                
+                // Store in form as hidden field
+                const hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = 'package';
+                hiddenInput.value = selectedPackage;
+                document.getElementById('booking-form').appendChild(hiddenInput);
+            } else {
+                // If no package selected, redirect back
+                window.location.href = 'book-now.html';
+            }
+        });
+
+        // Form submission
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to your server
+            // For demonstration, we'll show an alert and redirect
+            alert('Thank you for your booking! We will contact you shortly to confirm your reservation and payment details.');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

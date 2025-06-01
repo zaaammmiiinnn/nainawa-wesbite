@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbaeen Walk | Nainawa Ziyarat Tours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a',
+                            500: '#4a4a4a',
+                        },
+                        primary: {
+                            dark: '#01411C',
+                            light: '#1a5c2e'
+                        },
+                        gold: {
+                            500: '#D4AF37',
+                            600: '#c19a2b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        arabic: ['Noto Naskh Arabic', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        .arabic {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        .holy-site-image {
+            filter: brightness(0.8) contrast(1.1);
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .quote-arabic {
+            line-height: 2.5;
+            font-size: 1.5rem;
+        }
+        .gradient-border {
+            border: 1px solid transparent;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image: linear-gradient(#0a0a0a, #0a0a0a), linear-gradient(to right, #D4AF37, #01411C);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200">
+    <!-- Header with Language Selector -->
+    <header class="bg-primary-dark text-white">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-mosque text-xl text-gold-500"></i>
+                <span class="text-xl font-semibold">Nainawa Ziyarat Tours</span>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-gold-500 transition-colors"><i class="fas fa-phone-alt mr-2"></i> ++91-8840936715</a>
+                    <a href="#" class="hover:text-gold-500 transition-colors"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-primary-dark text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="Home_page.html" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">Home</a>
+                    <div class="dropdown relative">
+                        <button class="hover:text-gold-500 font-medium py-2 flex items-center transition-colors">
+                            Packages <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
+                        <div class="dropdown-menu absolute hidden mt-2 py-2 w-48 bg-dark-800 rounded-md shadow-xl z-50 border border-dark-700">
+                            <a href="arbaeen_walk.html" class="block px-4 py-2 text-gray-200 hover:bg-dark-700 hover:text-gold-500">Arbaeen Walk</a>
+                            <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-dark-700 hover:text-gold-500">Karbala & Najaf</a>
+                            <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-dark-700 hover:text-gold-500">Iran Holy Sites</a>
+                            <a href="#" class="block px-4 py-2 text-gray-200 hover:bg-dark-700 hover:text-gold-500">Custom Pilgrimage</a>
+                        </div>
+                    </div>
+                    <a href="about-us.html" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">About Us</a>
+                    <a href="home_page.html#blog" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">Blog</a>
+                    <a href="Home_page.html#contact" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">Contact</a>
+                    <a href="Home_page.html#faq" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">FAQ</a>
+               </div>
+                
+                <div class="hidden md:block">
+                    <a href="book_now.html" class="bg-gold-500 hover:bg-gold-600 text-primary-dark px-6 py-2 rounded-full font-medium transition-colors shadow-lg">Book Now</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-2">
+                <a href="index.html" class="block py-2 px-4 hover:bg-primary-light">Home</a>
+                <div class="px-4 py-2">
+                    <button class="flex items-center justify-between w-full hover:text-gold-500">
+                        Packages <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="hidden mt-2 pl-4">
+                        <a href="arbaeen-walk.html" class="block py-2 hover:bg-primary-light">Arbaeen Walk</a>
+                        <a href="#" class="block py-2 hover:bg-primary-light">Karbala & Najaf</a>
+                        <a href="#" class="block py-2 hover:bg-primary-light">Iran Holy Sites</a>
+                        <a href="#" class="block py-2 hover:bg-primary-light">Custom Pilgrimage</a>
+                    </div>
+                </div>
+                <a href="index.html#about" class="block py-2 px-4 hover:bg-primary-light">About Us</a>
+                <a href="index.html#faq" class="block py-2 px-4 hover:bg-primary-light">FAQ</a>
+                <a href="index.html#blog" class="block py-2 px-4 hover:bg-primary-light">Blog</a>
+                <a href="index.html#contact" class="block py-2 px-4 hover:bg-primary-light">Contact</a>
+                <a href="index.html#booking" class="block bg-gold-500 text-primary-dark px-4 py-2 mx-4 my-2 rounded-full text-center">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Arbaeen Hero Banner -->
+    <section class="relative h-96 flex items-center justify-center bg-cover bg-center" style="background-image: url('https://i.pinimg.com/736x/f1/b8/c1/f1b8c1c2d9321da888be9d75e49f4a59.jpg');">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Arbaeen Walk Pilgrimage</h1>
+            <p class="text-xl max-w-2xl mx-auto">The spiritual journey of walking from Najaf to Karbala in remembrance of Imam Hussain (a.s.)</p>
+        </div>
+    </section>
+
+    <!-- Arbaeen Content -->
+    <section class="py-16 bg-dark-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Introduction -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-6 text-gold-500">The Sacred Arbaeen Walk</h2>
+                    <div class="w-24 h-1 bg-gold-500 mb-6"></div>
+                    <p class="text-gray-400 mb-6">The Arbaeen pilgrimage is the world's largest annual gathering, where millions of devotees walk from Najaf to Karbala to commemorate the 40th day after the martyrdom of Imam Hussain (a.s.) and his companions at Karbala in 61 AH (680 CE).</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <img src="https://i.pinimg.com/736x/37/5e/79/375e799cad62395cb6c0ccb91787a74f.jpg">
+                        </div>
+                        <div>
+                            <p class="text-gray-400 mb-4">This spiritual journey covers approximately 80 kilometers (50 miles) and takes 3-4 days to complete. Pilgrims walk the same path that the family of Imam Hussain (a.s.) took when they were taken as captives after the Battle of Karbala.</p>
+                            <p class="text-gray-400">The walk is a profound demonstration of love, devotion, and remembrance of the sacrifices made by Imam Hussain (a.s.) for justice and truth.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Historical Significance -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-6 text-gold-500">Historical Significance</h2>
+                    <div class="w-24 h-1 bg-gold-500 mb-6"></div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-500">Origins of Arbaeen</h3>
+                        <p class="text-gray-400 mb-4">The tradition of commemorating Arbaeen dates back to the year 61 AH when Jabir ibn Abdullah al-Ansari, a companion of Prophet Muhammad (pbuh), visited the grave of Imam Hussain (a.s.) on the 40th day after his martyrdom.</p>
+                        <p class="text-gray-400 mb-4">This marked the first pilgrimage to Karbala and established the tradition of visiting Imam Hussain's shrine on Arbaeen.</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-500">The Walk's Historical Roots</h3>
+                        <p class="text-gray-400 mb-4">The walk commemorates the journey of the captives from Karbala to Kufa and then to Shaam (Damascus), as well as the return journey of the surviving family members who brought the heads of the martyrs back to Karbala.</p>
+                        <p class="text-gray-400">The modern Arbaeen walk tradition gained prominence after the fall of Saddam Hussein's regime in 2003, when pilgrims were finally able to freely practice this ritual.</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-dark-800 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold mb-3 text-gold-500">The First Arbaeen</h4>
+                            <p class="text-gray-400">Jabir ibn Abdullah al-Ansari, along with Atiyya ibn Sa'd, traveled from Medina to Karbala to pay respects to Imam Hussain (a.s.) on the 40th day after Ashura.</p>
+                        </div>
+                        <div class="bg-dark-800 p-6 rounded-lg">
+                            <h4 class="text-lg font-semibold mb-3 text-gold-500">Modern Revival</h4>
+                            <p class="text-gray-400">After being restricted during Saddam's regime, the Arbaeen walk has grown exponentially since 2003, with participation increasing each year.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spiritual Aspects -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-6 text-gold-500">Spiritual Dimensions</h2>
+                    <div class="w-24 h-1 bg-gold-500 mb-6"></div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-500">A Journey of Love and Devotion</h3>
+                        <p class="text-gray-400 mb-4">The Arbaeen walk is not merely a physical journey but a spiritual transformation. Pilgrims walk with the intention (niyyah) of seeking closeness to Allah through remembrance of Imam Hussain's sacrifice.</p>
+                        <p class="text-gray-400 mb-4">The walk embodies the principles of sacrifice, patience, and standing for truth that Imam Hussain (a.s.) demonstrated at Karbala.</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-500">Key Spiritual Practices</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-dark-800 p-6 rounded-lg">
+                                <div class="text-3xl text-gold-500 mb-3">
+                                    <i class="fas fa-hands-praying"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold mb-2">Ziyarat of Arbaeen</h4>
+                                <p class="text-gray-400">Reciting the special Ziyarat (salutation) of Arbaeen at the shrine of Imam Hussain (a.s.) is the culmination of the walk.</p>
+                            </div>
+                            <div class="bg-dark-800 p-6 rounded-lg">
+                                <div class="text-3xl text-gold-500 mb-3">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold mb-2">Mawakib (Rest Stops)</h4>
+                                <p class="text-gray-400">Thousands of volunteers set up mawakib (rest stops) offering food, drinks, medical aid, and foot massages to pilgrims.</p>
+                            </div>
+                            <div class="bg-dark-800 p-6 rounded-lg">
+                                <div class="text-3xl text-gold-500 mb-3">
+                                    <i class="fas fa-book-quran"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold mb-2">Lectures and Mourning</h4>
+                                <p class="text-gray-400">Religious scholars conduct lectures and mourning sessions along the route to educate pilgrims about Karbala's events.</p>
+                            </div>
+                            <div class="bg-dark-800 p-6 rounded-lg">
+                                <div class="text-3xl text-gold-500 mb-3">
+                                    <i class="fas fa-people-carry"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold mb-2">Service to Others</h4>
+                                <p class="text-gray-400">Pilgrims experience the spirit of selfless service by helping fellow walkers, embodying Hussaini values.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Details -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-6 text-gold-500">Our Arbaeen Walk Package</h2>
+                    <div class="w-24 h-1 bg-gold-500 mb-6"></div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-500">What We Offer</h3>
+                        <p class="text-gray-400 mb-6">Our comprehensive Arbaeen package is designed to make your spiritual journey comfortable, safe, and deeply meaningful.</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="gradient-border p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-gold-500">Included Services</h4>
+                                <ul class="space-y-2 text-gray-400">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-gold-500 mt-1 mr-3"></i>
+                                        <span>Pre-departure orientation session</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-gold-500 mt-1 mr-3"></i>
+                                        <span>Visa processing assistance</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-gold-500 mt-1 mr-3"></i>
+                                        <span>Airport transfers in Iraq</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-gold-500 mt-1 mr-3"></i>
+                                        <span>Accommodation in Najaf and Karbala</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-gold-500 mt-1 mr-3"></i>
+                                        <span>Experienced walking guides</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-gold-500 mt-1 mr-3"></i>
+                                        <span>Medical support during the walk</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-gold-500 mt-1 mr-3"></i>
+                                        <span>Religious scholar accompaniment</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-gold-500 mt-1 mr-3"></i>
+                                        <span>Daily meals and hydration support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="gradient-border p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-gold-500">Special Features</h4>
+                                <ul class="space-y-2 text-gray-400">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-gold-500 mt-1 mr-3"></i>
+                                        <span>Small group sizes (max 15 pilgrims)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-gold-500 mt-1 mr-3"></i>
+                                        <span>Option for luggage transport during walk</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-gold-500 mt-1 mr-3"></i>
+                                        <span>24/7 emergency support</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-gold-500 mt-1 mr-3"></i>
+                                        <span>Pre-arranged mawakib stops</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-gold-500 mt-1 mr-3"></i>
+                                        <span>Ziyarat guidebook and dua materials</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-gold-500 mt-1 mr-3"></i>
+                                        <span>Commemorative Arbaeen certificate</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-gold-500 mt-1 mr-3"></i>
+                                        <span>Post-walk debrief session</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-star text-gold-500 mt-1 mr-3"></i>
+                                        <span>Option for extended stay in Iraq</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-500">Itinerary Overview</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead class="bg-dark-800">
+                                    <tr>
+                                        <th class="p-3 font-semibold text-gold-500 border border-dark-700">Day</th>
+                                        <th class="p-3 font-semibold text-gold-500 border border-dark-700">Activities</th>
+                                        <th class="p-3 font-semibold text-gold-500 border border-dark-700">Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-dark-700">
+                                        <td class="p-3 border border-dark-700">Day 1</td>
+                                        <td class="p-3 border border-dark-700">Arrival in Najaf, orientation, visit to Imam Ali (a.s.) shrine</td>
+                                        <td class="p-3 border border-dark-700">Najaf</td>
+                                    </tr>
+                                    <tr class="border-b border-dark-700 bg-dark-800">
+                                        <td class="p-3 border border-dark-700">Day 2</td>
+                                        <td class="p-3 border border-dark-700">Preparation day, lectures, visit to Wadi-us-Salaam cemetery</td>
+                                        <td class="p-3 border border-dark-700">Najaf</td>
+                                    </tr>
+                                    <tr class="border-b border-dark-700">
+                                        <td class="p-3 border border-dark-700">Day 3</td>
+                                        <td class="p-3 border border-dark-700">Begin walk from Najaf (approx. 20km)</td>
+                                        <td class="p-3 border border-dark-700">Najaf to Al-Haidariya</td>
+                                    </tr>
+                                    <tr class="border-b border-dark-700 bg-dark-800">
+                                        <td class="p-3 border border-dark-700">Day 4</td>
+                                        <td class="p-3 border border-dark-700">Continue walk (approx. 25km)</td>
+                                        <td class="p-3 border border-dark-700">Al-Haidariya to Al-Qadisiyah</td>
+                                    </tr>
+                                    <tr class="border-b border-dark-700">
+                                        <td class="p-3 border border-dark-700">Day 5</td>
+                                        <td class="p-3 border border-dark-700">Continue walk (approx. 20km)</td>
+                                        <td class="p-3 border border-dark-700">Al-Qadisiyah to Babylon</td>
+                                    </tr>
+                                    <tr class="border-b border-dark-700 bg-dark-800">
+                                        <td class="p-3 border border-dark-700">Day 6</td>
+                                        <td class="p-3 border border-dark-700">Final walk to Karbala (approx. 15km)</td>
+                                        <td class="p-3 border border-dark-700">Babylon to Karbala</td>
+                                    </tr>
+                                    <tr class="border-b border-dark-700">
+                                        <td class="p-3 border border-dark-700">Day 7</td>
+                                        <td class="p-3 border border-dark-700">Arbaeen day at Imam Hussain's shrine</td>
+                                        <td class="p-3 border border-dark-700">Karbala</td>
+                                    </tr>
+                                    <tr class="border-b border-dark-700 bg-dark-800">
+                                        <td class="p-3 border border-dark-700">Day 8</td>
+                                        <td class="p-3 border border-dark-700">Visit to other Karbala sites, free time</td>
+                                        <td class="p-3 border border-dark-700">Karbala</td>
+                                    </tr>
+                                    <tr class="border-b border-dark-700">
+                                        <td class="p-3 border border-dark-700">Day 9</td>
+                                        <td class="p-3 border border-dark-700">Optional visit to Kadhimayn, departure</td>
+                                        <td class="p-3 border border-dark-700">Baghdad</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-dark-800 p-8 rounded-lg border border-gold-500/30">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-gold-500 mb-2">Arbaeen Walk Package</h3>
+                            <p class="text-gray-400">10 Days | 20-30 Muharram</p>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-3 gap-6 mb-8">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-gold-500 mb-2">$1,250</div>
+                                <p class="text-gray-400">Per person (shared room)</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-gold-500 mb-2">$1,550</div>
+                                <p class="text-gray-400">Single occupancy</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-gold-500 mb-2">$1,100</div>
+                                <p class="text-gray-400">Children (under 12)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <p class="text-gray-400 mb-6">* Prices exclude international flights. $200 deposit required to secure booking.</p>
+                            <a href="index.html#booking" class="inline-block bg-gold-500 hover:bg-gold-600 text-primary-dark px-8 py-3 rounded-full font-medium text-lg transition-colors shadow-lg">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preparation Guide -->
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold mb-6 text-gold-500">Preparation Guide</h2>
+                    <div class="w-24 h-1 bg-gold-500 mb-6"></div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-500">Physical Preparation</h3>
+                        <p class="text-gray-400 mb-4">The Arbaeen walk is physically demanding. We recommend starting a walking regimen at least 2 months before departure:</p>
+                        <ul class="list-disc pl-5 mb-6 space-y-2 text-gray-400">
+                            <li>Begin with 30-minute walks 3-4 times per week</li>
+                            <li>Gradually increase to 2-hour walks with a backpack</li>
+                            <li>Wear the shoes you plan to use during the walk</li>
+                            <li>Practice walking on different terrains</li>
+                            <li>Build up to walking 15-20km in one day</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-500">Packing List</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-dark-800 p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-gold-500">Essential Items</h4>
+                                <ul class="space-y-2 text-gray-400">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Comfortable walking shoes (broken in)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Lightweight backpack (20-30L)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Refillable water bottle (1L+)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Portable phone charger</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Basic first aid kit</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Sun protection (hat, sunscreen)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-dark-800 p-6 rounded-lg">
+                                <h4 class="text-lg font-semibold mb-3 text-gold-500">Recommended Items</h4>
+                                <ul class="space-y-2 text-gray-400">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Walking poles (especially for seniors)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Moisture-wicking clothing</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Small flashlight/headlamp</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Travel prayer mat</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Ziyarat booklets/dua collections</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-gold-500 mt-1 mr-3"></i>
+                                        <span>Extra socks and blister treatment</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gold-500">Spiritual Preparation</h3>
+                        <p class="text-gray-400 mb-4">To maximize the spiritual benefits of your journey, we recommend:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-400">
+                            <li>Studying the events of Karbala before your trip</li>
+                            <li>Learning the Ziyarat of Arbaeen and other relevant duas</li>
+                            <li>Setting personal spiritual goals for the journey</li>
+                            <li>Practicing patience and gratitude in daily life</li>
+                            <li>Performing recommended fasts and prayers before departure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-dark-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Arbaeen Walk Experiences</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-lg text-gray-400">Hear from pilgrims who have completed this transformative journey with us.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-dark-700 p-6 rounded-lg border border-dark-600">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-dark-600 overflow-hidden mr-4">
+                            <i class="fas fa-user text-3xl text-gold-500 w-full h-full flex items-center justify-center"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Brother Ali</h4>
+                            <p class="text-sm text-gray-500">From USA | Arbaeen 2022</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-400 mb-4">
+                        <i class="fas fa-quote-left text-dark-500 mr-2"></i>
+                        The Arbaeen walk was the most profound experience of my life. Our guide Sheikh Hassan made the journey spiritually enlightening with his nightly lectures. The team took care of everything - from comfortable accommodations to foot massages after long walking days.
+                    </div>
+                    <div class="flex">
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-700 p-6 rounded-lg border border-dark-600">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-dark-600 overflow-hidden mr-4">
+                            <i class="fas fa-user text-3xl text-gold-500 w-full h-full flex items-center justify-center"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sister Fatima</h4>
+                            <p class="text-sm text-gray-500">From UK | Arbaeen 2021</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-400 mb-4">
+                        <i class="fas fa-quote-left text-dark-500 mr-2"></i>
+                        As a solo female traveler, I was nervous about the trip, but the Ziyarat Tours team made me feel completely safe. The women's group had a female guide who was incredibly knowledgeable. Walking into Karbala on Arbaeen day with millions of others is an indescribable feeling.
+                    </div>
+                    <div class="flex">
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-700 p-6 rounded-lg border border-dark-600">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-dark-600 overflow-hidden mr-4">
+                            <i class="fas fa-user text-3xl text-gold-500 w-full h-full flex items-center justify-center"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Haji Mohammed</h4>
+                            <p class="text-sm text-gray-500">From Canada | Arbaeen 2023</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-400 mb-4">
+                        <i class="fas fa-quote-left text-dark-500 mr-2"></i>
+                        At 68 years old, I wasn't sure if I could complete the walk, but the support team was amazing. When I needed to rest, they arranged transport to the next stop. The medical assistant treated my blisters daily. The spiritual high of reaching Karbala made every step worth it.
+                    </div>
+                    <div class="flex">
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                        <i class="fas fa-star text-gold-500"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="index.html#testimonials" class="inline-block border-2 border-gold-500 text-gold-500 hover:bg-gold-500/10 px-6 py-2 rounded-full font-medium transition-colors">More Testimonials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-primary-dark to-primary-light">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready for Your Spiritual Journey?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join thousands of pilgrims in this transformative experience of walking to Karbala for Arbaeen.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="book_now.html" class="inline-block bg-gold-500 hover:bg-gold-600 text-primary-dark px-8 py-3 rounded-full font-medium text-lg transition-colors shadow-lg">Book Now</a>
+                <a href="home_page.html#contact" class="inline-block border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full font-medium text-lg transition-colors">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-gray-400 py-12 border-t border-dark-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-mosque text-2xl text-gold-500"></i>
+                        <span class="text-xl font-semibold text-white">Ziyarat Tours</span>
+                    </div>
+                    <p class="mb-4">Facilitating sacred journeys to the holy shrines since 2008.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-gold-500 transition-colors"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="hover:text-gold-500 transition-colors"><i class="fas fa-phone-alt"></i></a>
+                        <a href="#" class="hover:text-gold-500 transition-colors"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-gold-500 transition-colors">Home</a></li>
+                        <li><a href="arbaeen-walk.html" class="hover:text-gold-500 transition-colors">Arbaeen Walk</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Karbala & Najaf</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Iran Ziyarat</a></li>
+                        <li><a href="index.html#about" class="hover:text-gold-500 transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#faq" class="hover:text-gold-500 transition-colors">FAQ</a></li>
+                        <li><a href="index.html#blog" class="hover:text-gold-500 transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Packing List</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Visa Information</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Travel Tips</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gold-500 mt-1 mr-3"></i>
+                            <span>Al-Rasheed Street, Najaf, Iraq</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gold-500 mr-3"></i>
+                            <span>++91-8840936715</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gold-500 mr-3"></i>
+                            <span>info@ziyarattours.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-dark-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p>© 2023 Ziyarat Tours. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gold-500 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-gold-500 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/+918840936715" class="w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center text-white text-2xl shadow-lg transform hover:scale-110 transition-all">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-24 right-6 z-50 w-12 h-12 rounded-full bg-gold-500 hover:bg-gold-600 flex items-center justify-center text-primary-dark text-xl shadow-lg hidden transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

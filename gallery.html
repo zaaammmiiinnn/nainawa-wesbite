@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Nainawa Ziyarat Tours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                            600: '#3a3a3a',
+                            500: '#4a4a4a',
+                        },
+                        primary: {
+                            dark: '#01411C',
+                            light: '#1a5c2e'
+                        },
+                        gold: {
+                            500: '#D4AF37',
+                            600: '#c19a2b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        arabic: ['Noto Naskh Arabic', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        .arabic {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        .holy-site-image {
+            filter: brightness(0.8) contrast(1.1);
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .quote-arabic {
+            line-height: 2.5;
+            font-size: 1.5rem;
+        }
+        .gradient-border {
+            border: 1px solid transparent;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image: linear-gradient(#0a0a0a, #0a0a0a), linear-gradient(to right, #D4AF37, #01411C);
+        }
+        
+        /* Gallery specific styles */
+        .gallery-item {
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active {
+            background-color: #D4AF37;
+            color: #01411C;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200">
+    <!-- Header with Language Selector -->
+    <header class="bg-primary-dark text-white">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-mosque text-xl text-gold-500"></i>
+                <span class="text-xl font-semibold">Nainawa Ziyarat Tours</span>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <div class="flex space-x-2">
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-gold-500 transition-colors"><i class="fas fa-phone-alt mr-2"></i> ++91-8840936715</a>
+                    <a href="#" class="hover:text-gold-500 transition-colors"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-primary-dark text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="Home_page.html" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">Home</a>
+                    <div class="dropdown relative">
+                        <button class="hover:text-gold-500 font-medium py-2 flex items-center transition-colors">
+                            Packages <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
+                        <div class="dropdown-menu absolute hidden mt-2 py-2 w-48 bg-dark-800 rounded-md shadow-xl z-50 border border-dark-700">
+                            <a href="arbaeen_walk.html" class="block px-4 py-2 text-gray-200 hover:bg-dark-700 hover:text-gold-500">Arbaeen Walk</a>
+                            <a href="iraq.html" class="block px-4 py-2 text-gray-200 hover:bg-dark-700 hover:text-gold-500">Iraq Holy Sites</a>
+                            <a href="mash-qom.html" class="block px-4 py-2 text-gray-200 hover:bg-dark-700 hover:text-gold-500">Iran Holy Sites</a>
+                            <a href="book_now.html" class="block px-4 py-2 text-gray-200 hover:bg-dark-700 hover:text-gold-500">Custom Pilgrimage</a>
+                        </div>
+                    </div>
+                    <a href="about-us.html" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">About Us</a>
+                    <a href="gallery.html" class="hover:text-gold-500 font-medium py-2 border-b-2 border-gold-500 transition-all">Gallery</a>
+                    <a href="#faq" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">FAQ</a>
+                    <a href="Home_page.html#contact" class="hover:text-gold-500 font-medium py-2 border-b-2 border-transparent hover:border-gold-500 transition-all">Contact</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <a href="book_now.html" class="bg-gold-500 hover:bg-gold-600 text-primary-dark px-6 py-2 rounded-full font-medium transition-colors shadow-lg">Book Now</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-2">
+                <a href="Home_page.html" class="block py-2 px-4 hover:bg-primary-light">Home</a>
+                <div class="px-4 py-2">
+                    <button class="flex items-center justify-between w-full hover:text-gold-500">
+                        Packages <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="hidden mt-2 pl-4">
+                        <a href="arbaeen_walk.html" class="block py-2 hover:bg-primary-light">Arbaeen Walk</a>
+                        <a href="iraq.html" class="block py-2 hover:bg-primary-light">Karbala & Najaf</a>
+                        <a href="mash-qom.html" class="block py-2 hover:bg-primary-light">Iran Holy Sites</a>
+                        <a href="book_now.html" class="block py-2 hover:bg-primary-light">Custom Pilgrimage</a>
+                    </div>
+                </div>
+                <a href="about-us.html" class="block py-2 px-4 hover:bg-primary-light">About Us</a>
+                <a href="gallery.html" class="block py-2 px-4 bg-primary-light">Gallery</a>
+                <a href="#faq" class="block py-2 px-4 hover:bg-primary-light">FAQ</a>
+                <a href="#contact" class="block py-2 px-4 hover:bg-primary-light">Contact</a>
+                <a href="book_now.html" class="block bg-gold-500 text-primary-dark px-4 py-2 mx-4 my-2 rounded-full text-center">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero Section -->
+    <section class="relative py-20 md:py-32 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1586348943529-beaae6c28db9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80');">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Ziyarat Gallery</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300">Relive the spiritual journey through our collection of sacred moments</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="py-12 bg-dark-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <button class="filter-btn px-4 py-2 rounded-full border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-primary-dark active" data-filter="all">All</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-primary-dark" data-filter="arbaeen">Arbaeen Walk</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-primary-dark" data-filter="arbaeen">2025 Arafah</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-primary-dark" data-filter="karbala">Karbala</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-primary-dark" data-filter="najaf">Najaf</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-primary-dark" data-filter="mashhad">Mashhad</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-primary-dark" data-filter="qom">Qom</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-primary-dark" data-filter="samarra">Samarra</button>
+            </div>
+            
+            <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Initial gallery items will be loaded here -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <button id="load-more-btn" class="bg-gold-500 hover:bg-gold-600 text-primary-dark px-8 py-3 rounded-full font-medium text-lg transition-colors shadow-lg">Load More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="">
+        <div class="lightbox-nav">
+            <button id="lightbox-prev" class="bg-gold-500 hover:bg-gold-600 text-primary-dark w-12 h-12 rounded-full flex items-center justify-center">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="lightbox-next" class="bg-gold-500 hover:bg-gold-600 text-primary-dark w-12 h-12 rounded-full flex items-center justify-center">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-gray-400 py-12 border-t border-dark-800">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-mosque text-2xl text-gold-500"></i>
+                        <span class="text-xl font-semibold text-white">Nainawa Ziyarat Tours</span>
+                    </div>
+                    <p class="mb-4">Facilitating sacred journeys to the holy shrines since 2008.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-gold-500 transition-colors"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="hover:text-gold-500 transition-colors"><i class="fas fa-phone-alt"></i></a>
+                        <a href="#" class="hover:text-gold-500 transition-colors"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="Home_page.html" class="hover:text-gold-500 transition-colors">Home</a></li>
+                        <li><a href="#packages" class="hover:text-gold-500 transition-colors">Pilgrimage Packages</a></li>
+                        <li><a href="about-us.html" class="hover:text-gold-500 transition-colors">About Us</a></li>
+                        <li><a href="gallery.html" class="hover:text-gold-500 transition-colors">Gallery</a></li>
+                        <li><a href="#faq" class="hover:text-gold-500 transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="hover:text-gold-500 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Destinations</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Karbala</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Najaf</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Kadhimayn</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Samarra</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Mashhad</a></li>
+                        <li><a href="#" class="hover:text-gold-500 transition-colors">Qom</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Newsletter</h4>
+                    <p class="mb-4">Subscribe for updates on new packages and spiritual content.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l bg-dark-700 border border-dark-600 focus:border-gold-500 focus:outline-none text-gray-200">
+                        <button type="submit" class="bg-gold-500 hover:bg-gold-600 px-4 py-2 rounded-r text-primary-dark">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-dark-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p>© 2023 Nainawa Ziyarat Tours. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gold-500 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-gold-500 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/+918840936715" class="w-16 h-16 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center text-white text-2xl shadow-lg transform hover:scale-110 transition-all">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-24 right-6 z-50 w-12 h-12 rounded-full bg-gold-500 hover:bg-gold-600 flex items-center justify-center text-primary-dark text-xl shadow-lg hidden transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Gallery data - this would typically come from a database in a real application
+        const galleryData = [
+            {
+                id: 1,
+                src: "https://scontent.flko10-1.fna.fbcdn.net/v/t39.30808-6/490803299_9490060961071005_3254687873067541772_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=VUHXhU76gnAQ7kNvwF1Y7Cp&_nc_oc=Adm0gCLYAOavgX6Q6xkVKPHQpDh7zv-k5CicWfbiMEghjA6rNbQGqe13OydRVz5B6E76xH0mqArIe2qcGc7qYEOw&_nc_zt=23&_nc_ht=scontent.flko10-1.fna&_nc_gid=dlBcwpKKOBDDNdckfgZZtA&oh=00_AfKyQmvh8cTq1-sMpVZ1WKVaz9KuKuqZCiNCdgdKcE5aNw&oe=6832C02B",
+                category: "arbaeen",
+                title: "Arbaeen Walk 2023",
+                description: "Najaf to Karbala"
+            },
+            {
+                id: 2,
+                src: "https://i.pinimg.com/736x/c0/7e/a2/c07ea229b3fc22896fe9503b3ba54a25.jpg",
+                category: "karbala",
+                title: "Shrine of Imam Hussain (a.s.)",
+                description: "Karbala, Iraq"
+            },
+            {
+                id: 3,
+                src: "https://i.pinimg.com/736x/dd/47/25/dd4725d350f853d69a8673b72e6b6504.jpg",
+                category: "najaf",
+                title: "Shrine of Imam Ali (a.s.)",
+                description: "Najaf, Iraq"
+            },
+            {
+                id: 4,
+                src: "https://scontent.flko9-2.fna.fbcdn.net/v/t39.30808-6/496939752_24480243844901507_5686348786261097772_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=sFgITOfc_N8Q7kNvwHXhSco&_nc_oc=AdmGx6bYf6J7P98_EmqF_NJ7Kli5WmycoMCvOyS4l9uSmQG9GkVH5oREmmD0AddIjtUVgEYcjYYggIfNZElWcoNG&_nc_zt=23&_nc_ht=scontent.flko9-2.fna&_nc_gid=nBRobRxzLazSiO7zVhs4Qw&oh=00_AfKRD_a72wpyN0Y1rLeVaj4TvFnRjJYAqXIGWfLo3dqyHQ&oe=6832CBE8",
+                category: "mashhad",
+                title: "Shrine of Imam Reza (a.s.)",
+                description: "Mashhad, Iran"
+            },
+            {
+                id: 5,
+                src: "https://scontent.flko9-2.fna.fbcdn.net/v/t39.30808-6/495908430_24477577051834853_4042425781206311216_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=RJFKnJ66zGMQ7kNvwEDi1zm&_nc_oc=AdkzYKIuyLj6o7esTCoa6zDzykk9OhnUgRFwRQpZUcE3LcVsHjNs6g24IfpGAJ2Ae8TYxmEP-YI1YCRZVYegAWSC&_nc_zt=23&_nc_ht=scontent.flko9-2.fna&_nc_gid=oTM7shAS81-ePrxjBg5LiA&oh=00_AfIY1o_fOmn8DCET-1JcHbu3O3sOux1kcgxu4jc_n9QSZg&oe=6832B027",
+                category: "qom",
+                title: "Shrine of Hazrat Masuma (s.a.)",
+                description: "Qom, Iran"
+            },
+            {
+                id: 6,
+                src: "https://images.unsplash.com/photo-1580077871668-f80a5a5645a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                category: "samarra",
+                title: "Al-Askari Shrine",
+                description: "Samarra, Iraq"
+            },
+            {
+                id: 7,
+                src: "https://images.unsplash.com/photo-1601593768790-1a1b27b9ecc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                category: "arbaeen",
+                title: "Arbaeen Pilgrims",
+                description: "Road to Karbala"
+            },
+            {
+                id: 8,
+                src: "https://images.unsplash.com/photo-1579613832129-d3a0a8d5f4d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                category: "karbala",
+                title: "Karbala at Night",
+                description: "Illuminated Shrine"
+            },
+            {
+                id: 9,
+                src: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80",
+                category: "najaf",
+                title: "Courtyard of Imam Ali (a.s.)",
+                description: "Najaf, Iraq"
+            },
+            {
+                id: 10,
+                src: "https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1494&q=80",
+                category: "mashhad",
+                title: "Interior of Imam Reza Shrine",
+                description: "Mashhad, Iran"
+            },
+            {
+                id: 11,
+                src: "https://images.unsplash.com/photo-1601593768790-1a1b27b9ecc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                category: "qom",
+                title: "Hawza Ilmiyya Qom",
+                description: "Qom, Iran"
+            },
+            {
+                id: 12,
+                src: "https://images.unsplash.com/photo-1579613832129-d3a0a8d5f4d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                category: "samarra",
+                title: "Malwiya Minaret",
+                description: "Samarra, Iraq"
+            },
+            // Additional images for "Load More" functionality
+            {
+                id: 13,
+                src: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80",
+                category: "arbaeen",
+                title: "Pilgrims Resting",
+                description: "Arbaeen Walk"
+            },
+            {
+                id: 14,
+                src: "https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1494&q=80",
+                category: "karbala",
+                title: "Ziyarat at Night",
+                description: "Karbala, Iraq"
+            },
+            {
+                id: 15,
+                src: "https://images.unsplash.com/photo-1601593768790-1a1b27b9ecc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                category: "najaf",
+                title: "Worshippers at Shrine",
+                description: "Najaf, Iraq"
+            },
+            {
+                id: 16,
+                src: "https://images.unsplash.com/photo-1579613832129-d3a0a8d5f4d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                category: "mashhad",
+                title: "Golden Dome",
+                description: "Mashhad, Iran"
+            }
+        ];
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Gallery functionality
+        const galleryContainer = document.getElementById('gallery-container');
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        let currentFilter = 'all';
+        let visibleItems = 8; // Number of items to show initially
+        const itemsPerLoad = 4; // Number of items to load each time
+        
+        // Function to create gallery item HTML
+        function createGalleryItem(item) {
+            return `
+                <div class="gallery-item rounded-lg overflow-hidden shadow-lg bg-dark-700" data-category="${item.category}" data-id="${item.id}">
+                    <img src="${item.src}" alt="${item.title}" class="w-full h-64 object-cover">
+                    <div class="gallery-overlay">
+                        <h3 class="font-bold">${item.title}</h3>
+                        <p class="text-sm">${item.description}</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Function to render gallery items
+        function renderGallery(filter = 'all', count = visibleItems) {
+            galleryContainer.innerHTML = '';
+            
+            let filteredItems = galleryData;
+            if (filter !== 'all') {
+                filteredItems = galleryData.filter(item => item.category === filter);
+            }
+            
+            const itemsToShow = filteredItems.slice(0, count);
+            
+            itemsToShow.forEach(item => {
+                galleryContainer.innerHTML += createGalleryItem(item);
+            });
+            
+            // Hide "Load More" button if all items are shown
+            if (count >= filteredItems.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'inline-block';
+            }
+            
+            // Reattach lightbox event listeners to new items
+            attachLightboxListeners();
+        }
+        
+        // Initial render
+        renderGallery();
+        
+        // Filter functionality
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                currentFilter = button.getAttribute('data-filter');
+                visibleItems = 8; // Reset visible items count when filter changes
+                renderGallery(currentFilter, visibleItems);
+            });
+        });
+        
+        // Load more functionality
+        loadMoreBtn.addEventListener('click', () => {
+            visibleItems += itemsPerLoad;
+            renderGallery(currentFilter, visibleItems);
+        });
+        
+        // Lightbox functionality
+        function attachLightboxListeners() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            const lightboxPrev = document.getElementById('lightbox-prev');
+            const lightboxNext = document.getElementById('lightbox-next');
+            
+            // Get all gallery images
+            const galleryImages = document.querySelectorAll('.gallery-item img');
+            let currentImageIndex = 0;
+            
+            // Open lightbox when clicking on gallery image
+            galleryImages.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    lightboxImg.src = img.src;
+                    lightbox.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close lightbox
+            lightboxClose.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close when clicking outside image
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Navigation between images
+            lightboxPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+                lightboxImg.src = galleryImages[currentImageIndex].src;
+            });
+            
+            lightboxNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                lightboxImg.src = galleryImages[currentImageIndex].src;
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.style.display === 'flex') {
+                    if (e.key === 'Escape') {
+                        lightbox.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    } else if (e.key === 'ArrowLeft') {
+                        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+                        lightboxImg.src = galleryImages[currentImageIndex].src;
+                    } else if (e.key === 'ArrowRight') {
+                        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                        lightboxImg.src = galleryImages[currentImageIndex].src;
+                    }
+                }
+            });
+        }
+        
+        // Initial attachment of lightbox listeners
+        attachLightboxListeners();
+    </script>
+</body>
+</html>
